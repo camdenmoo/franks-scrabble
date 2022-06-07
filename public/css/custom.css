@@ -4,7 +4,9 @@ body{
 
 .container{
     text-align: center;
+    width: 50%;
 }
+
 button.fetch-tiles{
     margin-top: 0.8rem;
 }
@@ -42,9 +44,10 @@ button.fetch-tiles{
 }
 
 table.suggestions{
-    margin:0 auto;
+    margin:1rem auto 4rem;
+    width: 100%;
     height: 100%;
-    width: 80%;
+    
 }
 
 table th{
@@ -61,4 +64,8 @@ table td{
     border: 1px solid #999999;
     width:25%;
     padding: 5px;
+}
+
+.info-panel{
+    text-align: left;
 }

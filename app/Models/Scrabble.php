@@ -166,6 +166,18 @@ class Scrabble extends Model
 
     }
 
+    // Let's find out how many string lengths there are in our array of words
+    public function number_of_string_lengths($words = null){
+        $string_lengths = [];
+        foreach($words as $word){
+            $strlen = strlen($word['word']);
+            if(in_array($strlen, $string_lengths) == false){
+                $string_lengths[] = $strlen;
+            }         
+        }
+        return $string_lengths;
+    }
+
 
     
 }

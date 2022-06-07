@@ -38,24 +38,34 @@
           
             </div>
 
-            <div style="text-align:center;">
-                <table class="suggestions">
-                    <tr>
-                        <th>Word</th>
-                        <th>Score</th>
-                        <th>Highest value letter</th>
-                        <th>Score if used on tripple letter square</th>
-                    </tr>
-                    @foreach($words as $word)
-                        <tr>
-                            <td>{{$word['word']}}</td>
-                            <td>{{$word['value']}}</td>
-                            <td> {{$word['highest_value_letter']}}</td>
-                            <td>{{$word['tripple_letter_score']}}</td>
-                        </tr>
-                    @endforeach
-                </table>   
+            <div class="info-panel">
+                @foreach($string_lengths as $strlen)
+                    <h4>{{$strlen}} letter words</h4>
+
+                    <div style="text-align:center;">
+                        <table class="suggestions">
+                            <tr>
+                                <th>Word</th>
+                                <th>Score</th>
+                                <th>Highest value letter</th>
+                                <th>Score if used on tripple letter square</th>
+                            </tr>
+                            @foreach($words as $word)
+                                @if(strlen($word['word']) == $strlen)
+                                    <tr>
+                                        <td>{{$word['word']}}</td>
+                                        <td>{{$word['value']}}</td>
+                                        <td> {{$word['highest_value_letter']}}</td>
+                                        <td>{{$word['tripple_letter_score']}}</td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        </table>   
+                    </div>
+                @endforeach
             </div>
+
+            
 
         </div>
     </main>
