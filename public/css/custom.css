@@ -1,0 +1,41 @@
+body{
+    margin-top: 3rem;
+}
+
+.container{
+    text-align: center;
+}
+button.fetch-tiles{
+    margin-top: 0.8rem;
+}
+
+.tiles{
+    margin-top: 1.4rem;
+    display: block;
+}
+
+.tile{
+    width: 80px;
+    height: 80px;
+    background: #E3CFAA;
+    border: 2px solid #BD9768;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #000;
+    margin: 10px 7px;
+    display: inline-block;
+}
+
+.tile>.letter{
+    position: relative;
+    top: 3px;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.tile>.value{
+    position: relative;
+    top: -20px;
+    right: 7px;
+    font-size: 1rem;
+    text-align: right;
+}

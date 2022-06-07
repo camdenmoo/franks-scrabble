@@ -10,6 +10,7 @@
    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css?t='.time()) }}" rel="stylesheet">
 
     <title>Frank's Scrabble Game</title>
 
@@ -24,15 +25,30 @@
 
     <main>
         <div class="container">
-            <p>Let's play the game here.</p>
+            <a href="/"><button class="btn btn-success fetch-tiles">Fetch new tiles</button></a>
+            
+            <div class="tiles">
+                @foreach($tiles as $tile)
+                    <div class="tile">
+                        <div class="letter">{{$tile['letter']}}</div>
+                        <div class="value">{{$tile['value']}}</div>
+                    </div>
+                @endforeach
+
+          
+            </div>
+
+            <div>
+                @foreach($words as $word)
+                    {{$word['word']}} - {{$word['value']}}
+                    <br>
+                @endforeach   
+            </div>
+
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            Frank's Scrabble Game &copy; 2022
-        </div>
-    </footer>
+
 
     
 </body>
