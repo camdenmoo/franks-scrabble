@@ -25,7 +25,7 @@
 
     <main>
         <div class="container">
-            <a href="/"><button class="btn btn-success fetch-tiles">Fetch new tiles</button></a>
+            <a href="/"><button class="btn btn-success btn-lg fetch-tiles">Fetch new tiles</button></a>
             
             <div class="tiles">
                 @foreach($tiles as $tile)
@@ -38,18 +38,26 @@
           
             </div>
 
-            <div>
-                @foreach($words as $word)
-                    {{$word['word']}} - {{$word['value']}}
-                    <br>
-                @endforeach   
+            <div style="text-align:center;">
+                <table class="suggestions">
+                    <tr>
+                        <th>Word</th>
+                        <th>Score</th>
+                        <th>Highest value letter</th>
+                        <th>Score if used on tripple letter square</th>
+                    </tr>
+                    @foreach($words as $word)
+                        <tr>
+                            <td>{{$word['word']}}</td>
+                            <td>{{$word['value']}}</td>
+                            <td> {{$word['highest_value_letter']}}</td>
+                            <td>{{$word['tripple_letter_score']}}</td>
+                        </tr>
+                    @endforeach
+                </table>   
             </div>
 
         </div>
     </main>
-
-
-
-    
 </body>
 </html>
